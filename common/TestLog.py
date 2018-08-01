@@ -9,7 +9,7 @@ from datetime import datetime
 
 import threading
 
-from CiTest import readConfig as RC
+import readConfig as RC
 import os
 
 class TestLog(object):
