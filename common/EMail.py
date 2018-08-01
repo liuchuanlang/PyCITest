@@ -43,7 +43,7 @@ class Email(object):
 
     def get_Result(self, reportFile):
         '获取测试结果'
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver")
         self.driver.maximize_window()
         ##得到测试报告路径
         self.result_url = "file://%s" % reportFile
@@ -88,9 +88,9 @@ class Email(object):
         try:
             self.smtp = smtplib.SMTP(self.server, 25)
             self.smtp.login(self.sender, self.password)
-            # self.receiver = ['hebaochen@tenez.cn','mazhuang@tenez.cn','yangyaojun@tenez.cn']
+            self.receiver = ['liuchuanlang95@163.com']
             self.receiver.append(self.PReceiver)
-            # self.receiver = ['yangyaojun@tenez.cn','272981562@qq.com']
+            self.receiver = ["liuchuanlang95@163.com"]
             print(self.receiver)
             # 定义发件人，如果不写，发件人为空
             self.msg['From'] = self.sender
